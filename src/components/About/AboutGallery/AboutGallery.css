@@ -1,0 +1,70 @@
+/* General styling */
+.about-gallery {
+    background-color: black;
+    color: white;
+    padding: 20px;
+  }
+  
+  /* Text sections */
+  .text-section {
+    margin: 20px 0;
+    padding: 20px;
+    font-family: 'ClashDisplay';
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  
+  .text-section.left {
+    text-align: left;
+  }
+  
+  .text-section.right {
+    text-align: right;
+  }
+  
+  /* Image grid */
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+    overflow: hidden; /* Prevent horizontal overflow */
+    scroll-snap-type: x mandatory; /* Enable snapping for smooth scrolling */
+    display: flex; /* Switch to flex for carousel effect */
+    scroll-behavior: smooth;
+    scroll-snap-align: start; /* Ensure scrolling stops at each image */
+    overflow-x: scroll; /* Enable horizontal scrolling for small screens */
+  }
+  .image-grid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Individual images */
+  .image-grid img {
+    width: 350px;
+    border-radius: 10px;
+    height: 319px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+  
+  /* Hover effect */
+  .image-grid img:hover {
+    transform: scale(1.0);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .image-grid {
+      scroll-snap-align: start; /* Ensure scrolling stops at each image */
+      overflow-x: scroll; /* Enable horizontal scrolling for small screens */
+    }
+    .image-grid::-webkit-scrollbar {
+        display: none;
+      }
+  
+    .image-grid img {
+      margin-right: 20px; /* Add spacing between images */
+    }
+  }
+  

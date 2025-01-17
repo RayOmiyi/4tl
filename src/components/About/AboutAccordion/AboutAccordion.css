@@ -1,0 +1,162 @@
+/* Container styling for the whole section */
+.About-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Left contact section styling */
+  .About-contact {
+    width: 40%;
+  }
+  
+  .About-contact h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff; /* White heading */
+    font-family: 'ClashDisplay';
+  }
+  
+  .About-contact h2 {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #999999;
+    font-family: 'ClashDisplay';
+}
+
+  .ftl-button {
+    padding: 12px 25px;
+    border: none;
+    color: white;
+    border: 2px solid white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    transition: color 0.3s ease;
+    z-index: 1;
+  }
+  
+  .ftl-button::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #EB8014;
+    transition: top 0.3s ease;
+    z-index: -1;
+  }
+  
+  .ftl-button:hover {
+    color: white; /* Change text color when hovering */
+  }
+  
+  .ftl-button:hover::after {
+    top: 0; /* Slide the background from bottom to top */
+  }
+  
+  /* Right accordion container styling */
+  .accordion-container {
+    width: 55%;
+  }
+  
+  .accordion-item {
+    padding: 15px 0;
+  }
+  
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .accordion-header h3 {
+    font-size: 20px;
+    margin: 0;
+    color: #fff; /* White question text */
+    text-transform: uppercase;
+    font-family: 'ClashDisplay';
+  }
+  
+  .question-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .question-btn:hover {
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+  }
+  
+  /* Content of each accordion item */
+  .accordion-content {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 10px;
+    font-family: 'ClashDisplay';
+    color: #999; /* Light grey text */
+    padding-left: 10px;
+    overflow: hidden;
+    max-height: 0; /* Initially collapsed */
+    transition: max-height 0.3s ease; /* Smooth toggle effect */
+  }
+  
+  /* Add spacing for the overall layout */
+  .accordion-item + .accordion-item {
+    margin-top: 15px;
+  }
+  
+  /* When content is active, expand it */
+  .accordion-content.active {
+    max-height: 500px; /* Adjust this to the expected maximum content height */
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    .About-group {
+      flex-direction: column; /* Stack items vertically */
+      gap: 20px; /* Reduce the gap */
+    }
+  
+    .About-contact {
+      width: 100%; /* Take full width */
+      text-align:left; 
+    }
+    .About-contact h1{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .About-contact h2{
+        color: #999999;
+    }
+    .accordion-container {
+      width: 100%; /* Take full width */
+    }
+  
+    .accordion-header h3 {
+      font-size: 18px; /* Adjust text size */
+    }
+  
+    .accordion-content {
+      font-size: 14px; /* Adjust text size */
+    }
+  }
+  

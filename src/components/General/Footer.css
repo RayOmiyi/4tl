@@ -1,0 +1,104 @@
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow wrapping of items on smaller screens */
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-family: 'ClashDisplay';
+    margin-bottom: 20px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .footer-links a:hover {
+    color: darkorange;
+  }
+  
+  .footer-logo img {
+    width: 48px; /* Logo size */
+    height: auto;
+  }
+  
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  
+  .footer-social a {
+    color: white;
+    text-decoration: none;
+    font-family: 'ClashDisplay';
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  .footer-social a:hover {
+    color: darkorange;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+  }
+  
+  .footer-bottom h2 {
+    font-size: 18px;
+    font-family: 'ClashDisplay';
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .footer-top {
+      flex-direction: row; /* Keep them side by side on larger screens */
+      justify-content: center;
+      align-items: flex-start; /* Align items at the top */
+    }
+  
+    .footer-links,
+    .footer-social {
+      flex-direction: column; /* Stack links and socials vertically */
+      gap: 10px;
+    }
+  
+    .footer-logo {
+      margin-bottom: 10px;
+    }
+  
+    .footer-social {
+      margin-left: 40px; /* Add some spacing between the sections */
+    }
+  
+    .footer-bottom h2 {
+      font-size: 16px; /* Adjust font size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-bottom h2 {
+      font-size: 14px; /* Further reduce font size for very small screens */
+    }
+  
+    .footer-logo img {
+      width: 40px; /* Adjust logo size on small screens */
+    }
+  }
+  

@@ -1,0 +1,53 @@
+/* *
+* @license
+*
+* Font Family: Clash Display
+* Designed by: Indian Type Foundry
+* URL: https://www.fontshare.com/fonts/clash-display
+* © 2025 Indian Type Foundry
+*
+* Clash Display Extralight 
+* Clash Display Light 
+* Clash Display Regular 
+* Clash Display Medium 
+* Clash Display Semibold 
+* Clash Display Bold 
+* Clash Display Variable (Variable font)
+
+* */
+
+@font-face {
+    font-family: 'ClashDisplay';
+    src: url('./ClashDisplay.ttf') format('woff2'),
+  }
+
+p{
+     font-family: 'ClashDisplay';
+     color: #999;
+}
+h3{
+     font-family: 'ClashDisplay';
+}
+
+.page-transition-wrapper {
+     position: relative;
+   }
+   
+   .fade-enter {
+     opacity: 0;
+   }
+   
+   .fade-enter-active {
+     opacity: 1;
+     transition: opacity 500ms ease-in-out;
+   }
+   
+   .fade-exit {
+     opacity: 1;
+   }
+   
+   .fade-exit-active {
+     opacity: 0;
+     transition: opacity 500ms ease-in-out;
+   }
+   

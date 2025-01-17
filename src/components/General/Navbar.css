@@ -1,0 +1,51 @@
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Distribute logo and hamburger button */
+  align-items: center; /* Vertically center the content */
+  padding: 16px 30px; /* Add space from edges (16px top/bottom, 32px left/right) */
+  width: 90%; /* Adjust width to be less than 100% */
+  position: fixed; /* Fixed position to keep it at the top */
+  top: 10px; /* Adjust the top position as needed */
+  left: 5%; /* Adjust left for centering or positioning */
+  z-index: 1000;
+  transition: transform 0.3s ease; /* Smooth transition when hidden */
+  background-color: #151313; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  border-radius: 15px;
+}
+
+/* Hide navbar when sidebar is open */
+.navbar-hidden {
+  transform: translateY(-120%); /* Move navbar out of view */
+}
+
+.navbar-logo {
+  padding: 0 16px; /* Space around the logo */
+}
+
+.logo {
+  width: 48px; /* Logo size */
+  height: auto;
+}
+
+.navbar-hamburger {
+  padding: 0 16px; /* Space around the hamburger button */
+}
+
+.hamburger-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-icon {
+  width: 32px; /* Icon size */
+  height: auto;
+  border-radius: 5px; /* Optional rounded corners for the hamburger icon */
+}
+
+.hamburger-button:hover {
+  opacity: 0.8; /* Slight fade effect on hover */
+}

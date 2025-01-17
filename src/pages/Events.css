@@ -1,0 +1,199 @@
+.events-section {
+  background-color: #000;
+  color: #fff;
+  padding: 50px;
+  font-family: "ClashDisplay", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+/* In Events.css */
+.event-image-wrapper img {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.event-image-wrapper img.loaded {
+  opacity: 1;
+}
+
+.events-header {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.event-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
+}
+
+.event-details {
+  flex: 1;
+  max-width: 50%;
+  z-index: 2;
+}
+
+.up-next {
+  color: #eb8014;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+.event-title-wrapper {
+  position: relative;
+  height: 6rem;
+  margin-bottom: 20px;
+}
+
+.event-title {
+  display: flex;
+  animation: scrollTitle 10s linear infinite;
+  white-space: nowrap;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  margin-bottom: 20px;
+  transform: none;
+}
+
+.event-title span {
+  border-top: 4px dashed #eb8014;
+  border-bottom: 4px dashed #eb8014;
+  font-size: 5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0 20px;
+  color: white;
+}
+
+.event-time {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.event-description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.event-button {
+  font-family: 'ClashDisplay';
+  height: 65px;
+  width: 172px;
+  border: 2px solid white;
+  padding: 2px 30px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.event-button::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #EB8014;
+  transition: top 0.3s ease;
+}
+
+.event-button:hover {
+  color: white;
+  z-index: 1;
+}
+
+.event-button:hover::after {
+  top: 0;
+  z-index: -1;
+}
+
+.event-image-wrapper {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.event-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.event-image {
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+  max-width: 350px;
+  height: 500px;
+  max-height: 500px;
+  transform: rotate(-5deg);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Animation for scrolling title */
+@keyframes scrollTitle {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .event-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .event-details {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .event-title span {
+    font-size: 3rem;
+  }
+
+  .event-image-wrapper {
+    max-width: 80%;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .event-info-wrapper{
+    align-items: center;
+  }
+
+  .event-image {
+    max-width: 100%;
+    height: auto;
+    transform: rotate(0deg);
+  }
+
+  .event-button {
+    width: 50%;
+    margin-top: 15px;
+  }
+}

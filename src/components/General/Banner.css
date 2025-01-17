@@ -1,0 +1,54 @@
+.banner-container {
+  margin-top: 10px;
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+  background-color: black;
+  border-top: 4px dashed #b86513; /* Amber border */
+  border-bottom: 4px dashed #b86513; /* Amber border */
+}
+
+.banner-content {
+  display: flex;
+  white-space: nowrap;
+  font-family: 'ClashDisplay';
+  animation: scrollBanner 15s linear infinite;
+}
+
+.banner-content span {
+  color: white;
+  font-family: 'ClashDisplay';
+  font-size: 8rem; /* Adjust font size as needed */
+  font-weight: 600;
+  padding: 0 20px; /* Space between repetitions */
+  transition: color 0.5s ease; /* Smooth transition for color */
+}
+
+/* Change text color on hover */
+.banner-content span:hover {
+  color: #b86513; /* Amber color */
+  cursor: pointer;
+}
+
+/* Keyframes for scrolling animation */
+@keyframes scrollBanner {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .banner-content span {
+    font-size: 4rem; /* Smaller font size for small screens */
+    padding: 0 10px; /* Reduce padding for small screens */
+  }
+
+  .banner-container {
+    border-top: 2px dashed #b86513; /* Thinner border for small screens */
+    border-bottom: 2px dashed #b86513; /* Thinner border for small screens */
+  }
+}

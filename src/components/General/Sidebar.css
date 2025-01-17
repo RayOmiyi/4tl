@@ -1,0 +1,91 @@
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%; /* Ensure full width on smaller screens */
+  height: 100%;
+  background: linear-gradient(to bottom, #D97706, #B45309); /* Matches bg-gradient-to-b from-amber-600 to-amber-700 */
+  border-radius: 8px; /* Matches rounded-lg */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Matches shadow-lg */
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Matches grid grid-rows-[auto,1fr,auto] */
+  gap: 16px; /* Matches gap-y-4 */
+  transition: transform 0.5s ease-in-out; /* Matches transition-transform duration-500 ease-in-out */
+  transform: translateX(100%); /* Initially hidden */
+  z-index: 99999;
+}
+
+.sidebar.show {
+  transform: translateX(0); /* Sidebar visible */
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px; /* Matches p-4 */
+}
+
+.sidebar-header img {
+  height: 60px; /* Matches h-15 */
+  border-radius: 8px; /* Matches rounded */
+}
+
+.close-btn {
+  color: white;
+  font-size: 24px; /* Matches text-3xl */
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.links {
+  padding: 16px; /* Matches p-4 */
+  font-family: 'ClashDisplay';
+
+}
+
+.links li {
+  margin-bottom: 8px; /* Matches space-y-2 */
+}
+
+.links a {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 18px; /* Matches text-xl */
+  padding: 10px 16px; /* Matches py-2 px-4 */
+  border-radius: 4px; /* Matches rounded-md */
+  text-decoration: none;
+  transition: background-color 0.3s ease; /* Matches transition-colors */
+}
+
+.links a:hover {
+  background-color: #F59E0B; /* Matches hover:bg-amber-500 */
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px; /* Matches space-x-4 */
+  padding-bottom: 16px; /* Matches pb-4 */
+}
+
+.social-links a {
+  color: white;
+  font-size: 24px; /* Matches text-2xl */
+  transition: color 0.3s ease; /* Matches hover:text-amber-300 */
+}
+
+.social-links a:hover {
+  color: #FBBF24; /* Matches hover:text-amber-300 */
+}
+
+/* Responsive Design */
+@media (min-width: 640px) { /* Small screens and above */
+  .sidebar {
+    width: 100%; /* Full width on small screens */
+    max-width: 25%; /* Matches sm:w-1/4 for larger screens */
+  }
+}

@@ -1,0 +1,93 @@
+/* Base styles for larger screens */
+.About-ftl-container {
+    text-align: center;
+    padding: 40px; /* Increased padding for more spacing */
+    position: relative;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    width: 90%; /* Optional: Set a max width for better control */
+    height: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #EB8014;
+  }
+  
+  .About-ftl-image-wrapper {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .About-ftl-image {
+    width: 150px; /* Small image size */
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .About-ftl-text h2 {
+    display: inline;
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+    font-family: 'ClashDisplay';
+  }
+  
+  .About-point {
+    color: white;
+  }
+  
+  .About-ftl-text h2 + h2 {
+    margin-left: 5px; /* Small spacing between each h2 */
+  }
+  
+  .About-ftl-button {
+    padding: 12px 25px;
+    border: none;
+    color: black;
+    border: 2px solid white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    transition: color 0.3s ease;
+    z-index: 1;
+    background-color: aliceblue;
+    font-family: 'ClashDisplay';
+    font-weight: 500;
+  }
+  
+  .About-ftl-h1{
+    color: #000;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: 'ClashDisplay';
+  }
+  
+  /* Media Query for Small Screens */
+  @media (max-width: 768px) {
+    .About-ftl-container {
+      padding: 20px; /* Reduce padding on smaller screens */
+      height: auto; /* Let the height be dynamic based on content */
+    }
+  
+    .About-ftl-image {
+      width: 120px; /* Smaller image size for mobile */
+    }
+  
+    .About-ftl-text h2 {
+      font-size: 20px; /* Adjust text size for smaller screens */
+    }
+  
+    .About-ftl-button {
+      padding: 10px 20px; /* Adjust button padding */
+      font-size: 16px; /* Reduce button font size */
+    }
+  }
+  
