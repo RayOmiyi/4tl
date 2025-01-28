@@ -1,36 +1,35 @@
 /* Navbar Styling */
 .navbar {
   display: flex;
-  justify-content: space-between; /* Distribute logo and hamburger button */
+  justify-content: space-between; /* Align content at the far ends */
   align-items: center; /* Vertically center the content */
-  padding: 16px 30px; /* Add space from edges (16px top/bottom, 32px left/right) */
-  width: 90%; /* Adjust width to be less than 100% */
-  position: fixed; /* Fixed position to keep it at the top */
-  top: 10px; /* Adjust the top position as needed */
-  left: 5%; /* Adjust left for centering or positioning */
+  padding: 16px 30px; /* Add space from edges */
+  width: 100%; /* Adjust to take full width */
+  position: fixed; /* Keep it fixed at the top */
+  top: 0; /* Position at the very top */
+  left: 0; /* Start at the far left */
   z-index: 1000;
   transition: transform 0.3s ease; /* Smooth transition when hidden */
-  background-color: #151313; 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-  border-radius: 15px;
+  background-color: transparent; /* Remove background color */
+  box-shadow: none; /* Remove shadow */
+  border-radius: 0; /* Remove border radius */
 }
 
-/* Hide navbar when sidebar is open */
 .navbar-hidden {
   transform: translateY(-120%); /* Move navbar out of view */
 }
 
 .navbar-logo {
-  padding: 0 16px; /* Space around the logo */
+  padding: 0; /* Remove padding around the logo */
 }
 
 .logo {
-  width: 48px; /* Logo size */
+  width: 70px; /* Adjust logo size */
   height: auto;
 }
 
 .navbar-hamburger {
-  padding: 0 16px; /* Space around the hamburger button */
+  padding: 0; /* Remove padding around the hamburger button */
 }
 
 .hamburger-button {
@@ -41,9 +40,9 @@
 }
 
 .hamburger-icon {
-  width: 32px; /* Icon size */
+  width: 52px; /* Adjust icon size */
   height: auto;
-  border-radius: 5px; /* Optional rounded corners for the hamburger icon */
+  border-radius: 0; /* Remove rounded corners */
 }
 
 .hamburger-button:hover {

@@ -20,7 +20,7 @@ const RelatedEvents = () => {
       day: date.getDate(),
     };
   };
-
+ 
   return (
     <div className="related-events">
       <div className="events-container">
@@ -52,7 +52,7 @@ const RelatedEvents = () => {
 
               {event.img.includes(".mp4") ? (
                 <video loop muted autoPlay className="image-section">
-                  <source src={event.img} type="video/mp4" />
+                   <source src={event.img} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               ) : (

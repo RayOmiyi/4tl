@@ -1,34 +1,38 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './UpcomingEvent.css';
 import { MdOutlineKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 const UpcomingEvents = ({ header, data, renderItem }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsToShow, setItemsToShow] = useState(window.innerWidth <= 768 ? 1 : 3);
+  const containerRef = useRef();
 
   useEffect(() => {
     const handleResize = () => {
       setItemsToShow(window.innerWidth <= 768 ? 1 : 3);
     };
 
-    // Add resize event listener
     window.addEventListener('resize', handleResize);
 
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+  const scrollNext = () => {
+    const container = containerRef.current;
+    if (container) {
+      const scrollAmount = container.offsetWidth / itemsToShow;
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
   };
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? data.length - 1 : prevIndex - 1
-    );
+  const scrollPrev = () => {
+    const container = containerRef.current;
+    if (container) {
+      const scrollAmount = container.offsetWidth / itemsToShow;
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -37,10 +41,10 @@ const UpcomingEvents = ({ header, data, renderItem }) => {
         {header && <h2 className="Head">{header}</h2>}
         <div className="HeaderControls">
           <div className="CarouselButtons">
-            <button onClick={prevSlide}>
+            <button onClick={scrollPrev}>
               <MdOutlineKeyboardArrowLeft size={30} />
             </button>
-            <button onClick={nextSlide}>
+            <button onClick={scrollNext}>
               <MdKeyboardArrowRight size={30} />
             </button>
           </div>
@@ -48,15 +52,18 @@ const UpcomingEvents = ({ header, data, renderItem }) => {
         </div>
       </div>
 
-      <div className="UpcomingContainer">
-        {data
-          .slice(currentIndex, currentIndex + itemsToShow) // Dynamically set how many cards are shown based on screen size
-          .concat(data.slice(0, Math.max(0, itemsToShow - (data.length - currentIndex)))) // Prevent out-of-bounds errors
-          .map((item, index) => (
-            <div key={index} className="EventCard">
-              {renderItem(item)}
-            </div>
-          ))}
+      <div className="UpcomingContainer" ref={containerRef}>
+        {data.map((item, index) => (
+          <div
+            key={index}
+            className="EventCard"
+            style={{
+              width: `calc((100% - ${10 * (itemsToShow - 1)}px) / ${itemsToShow})`, // Dynamic width
+            }}
+          >
+            {renderItem(item)}
+          </div>
+        ))}
       </div>
     </section>
   );

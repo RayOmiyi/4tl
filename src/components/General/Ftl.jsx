@@ -1,4 +1,4 @@
-import ftl from "../../assets/forlife.png";
+import ftl from "../../assets/Frame 4.png";
 import "./Ftl.css";
 
 const Ftl = () => {
@@ -20,7 +20,7 @@ const Ftl = () => {
         <h2>Party</h2>
       </div>
 
-      <button className="ftl-button">JOIN THE COMMUNITY</button>
+      <button className="ftl-buttons">JOIN THE COMMUNITY</button>
     </div>
   );
 };

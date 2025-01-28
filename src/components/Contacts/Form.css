@@ -3,7 +3,7 @@
     background-color: #000;
     color: #fff;
     font-family: 'ClashDisplay';
-    padding: 40px;
+    padding: 60px 40px;
 }
 .input-with-icon {
   position: relative;
@@ -23,17 +23,24 @@
 input {
   padding-left: 40px; /* Space for the icon */
 }
-
+ .minus-line {
+     display: flex;
+     gap: 5px;
+     align-items: center;
+     overflow: hidden;
+   }
+   
 .form-p{
-    margin-top: 70px;
-    border-top:3px dashed#EB8014;
-    color: #EB8014;
-    font-weight: 600;
+  margin-top: 120px; /* Increased from 70px to push content down */
+  padding-top: 20px; /* Add padding to create space between border and text */
+  color: #EB8014;
+  font-weight: 600;
 }
 h1 {
     font-size: 70px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
     color: #fff;
     text-transform: uppercase;
   }
@@ -41,7 +48,7 @@ h1 {
   form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
   }
   
   .form-row {

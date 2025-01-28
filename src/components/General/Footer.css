@@ -1,104 +1,138 @@
 footer {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    text-align: center;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allow wrapping of items on smaller screens */
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-family: 'ClashDisplay';
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: darkorange;
+}
+
+.footer-logo img {
+  width: 50px; /* Logo size */
+  height: auto;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.twitter-link {
+  position: relative;
+}
+
+.footer-social a {
+  color: white;
+  text-decoration: none;
+  font-family: 'ClashDisplay';
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.footer-social a:hover {
+  color: darkorange;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+}
+
+.footer-bottom h2 {
+  font-size: 18px;
+  font-family: 'ClashDisplay';
+}
+
+.twitter-container {
+  display: flex;
+  flex-direction: column; /* Stack the icon and text vertically */
+  align-items: center;    /* Center align both elements */
+  gap: 5px;               /* Add spacing between the icon and the "X" */
+}
+
+.twitter-icon {
+  position: absolute;  /* Position the icon above the text */
+  top: -10px;  /* Move the image up */
+  width: 70px; /* Adjust the size of the Twitter image */
+  height: auto;
+}
+@media (max-width: 768px) {
+  footer {
+    padding: 40px 20px;
   }
-  
+
   .footer-top {
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    flex-wrap: wrap; /* Allow wrapping of items on smaller screens */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
   }
-  
-  .footer-links {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    font-family: 'ClashDisplay';
-    margin-bottom: 20px;
+
+  .footer-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 60px;
   }
-  
-  .footer-links a {
-    color: white;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  .footer-links a:hover {
-    color: darkorange;
-  }
-  
+
   .footer-logo img {
-    width: 48px; /* Logo size */
+    width: 120px;
     height: auto;
   }
-  
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 180px 0 0 0;
+  }
+
   .footer-social {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 0;
+    position: absolute;
+    top: 180px;
+    right: 0;
   }
-  
-  .footer-social a {
-    color: white;
-    text-decoration: none;
-    font-family: 'ClashDisplay';
-    text-transform: uppercase;
-    font-weight: 600;
+
+  .twitter-icon {
+    display: none;
   }
-  
-  .footer-social a:hover {
-    color: darkorange;
-  }
-  
+
   .footer-bottom {
-    margin-top: 20px;
+    margin-top: 40px;
   }
-  
-  .footer-bottom h2 {
-    font-size: 18px;
-    font-family: 'ClashDisplay';
-  }
-  
-  /* Media Queries for Responsiveness */
-  @media (max-width: 768px) {
-    .footer-top {
-      flex-direction: row; /* Keep them side by side on larger screens */
-      justify-content: center;
-      align-items: flex-start; /* Align items at the top */
-    }
-  
-    .footer-links,
-    .footer-social {
-      flex-direction: column; /* Stack links and socials vertically */
-      gap: 10px;
-    }
-  
-    .footer-logo {
-      margin-bottom: 10px;
-    }
-  
-    .footer-social {
-      margin-left: 40px; /* Add some spacing between the sections */
-    }
-  
-    .footer-bottom h2 {
-      font-size: 16px; /* Adjust font size for smaller screens */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .footer-bottom h2 {
-      font-size: 14px; /* Further reduce font size for very small screens */
-    }
-  
-    .footer-logo img {
-      width: 40px; /* Adjust logo size on small screens */
-    }
-  }
-  
+}

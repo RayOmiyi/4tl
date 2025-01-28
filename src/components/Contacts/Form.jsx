@@ -4,6 +4,7 @@ import emailjs from "emailjs-com";
 import "./Form.css";
 import user from "../../assets/user.png";
 import phone from "../../assets/telephone.png";
+import { Minus } from "lucide-react";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -62,10 +63,18 @@ const Form = () => {
         }
       );
   };
-
+  const minusIcons = Array(50).fill(null);
+ 
   return (
     <div className="form-container">
-      <p className="form-p">CONTACT US</p>
+      <p className="form-p">
+        <span className="minus-line">
+          {minusIcons.map((_, index) => (
+            <Minus key={index} size={30} color="#EB8014" strokeWidth={1} />
+          ))}
+        </span>
+        CONTACT US
+      </p>{" "}
       <h1>WHAT'S THE 414?</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-row">

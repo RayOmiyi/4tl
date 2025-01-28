@@ -6,7 +6,22 @@
   position: relative;
   overflow: hidden;
 }
-/* In Events.css */
+
+/* Image wrapper */
+.event-image-wrapper {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* When hovered, apply random translate values */
+.event-image-wrapper.hovered {
+  transform: translateX(var(--random-x)) translateY(var(--random-y));
+}
+
 .event-image-wrapper img {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
@@ -16,9 +31,11 @@
   opacity: 1;
 }
 
+/* Event details and other styles */
 .events-header {
   font-size: 1.5rem;
-  margin-top: 20px;
+  padding-top: 50px;
+  margin-bottom: 30px;
   text-transform: uppercase;
 }
 
@@ -27,7 +44,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
+  flex-wrap: wrap;
 }
 
 .event-details {
@@ -40,7 +57,7 @@
   color: #eb8014;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin: 60px;
   font-size: 1.2rem;
   margin-top: 0;
 }
@@ -61,7 +78,6 @@
   width: 100%;
   z-index: 0;
   margin-bottom: 20px;
-  transform: none;
 }
 
 .event-title span {
@@ -74,10 +90,10 @@
   color: white;
 }
 
-.event-time {
+.event-times {
   font-size: 1rem;
   margin-bottom: 10px;
-  color: #ccc;
+  color: white;
 }
 
 .event-description {
@@ -123,15 +139,7 @@
   z-index: -1;
 }
 
-.event-image-wrapper {
-  flex: 1;
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.event-info-wrapper {
+.event-info-wrapper { 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -182,7 +190,8 @@
     justify-content: center;
     margin-top: 20px;
   }
-  .event-info-wrapper{
+
+  .event-info-wrapper {
     align-items: center;
   }
 
