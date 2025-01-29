@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import { useFetchProjects } from "../fetchEvents";
 import "./EventId.css";
 import SimilarEvents from "../components/General/SimilarEvents";
-import Ftl from '../components/General/Ftl';
-import Banner from '../components/General/Banner';
+import Ftl from "../components/General/Ftl";
+import Banner from "../components/General/Banner";
 
 const EventId = () => {
   const { eventId } = useParams(); // Retrieve the event ID from the URL
@@ -65,11 +65,14 @@ const EventId = () => {
             </div>
             <div className="event-info-wrapper">
               <p className="event-time">02:00PM - 08:00PM | {event.date}</p>
-              <p className="event-description">{event.description}</p>
+              <p className="event-description">
+                {event.description}Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Facilis vel qui aspernatur incidunt optio sed
+              </p>
               <button className="event-button">GET TICKETS</button>
             </div>
-          </div>
 
+          </div>
           <div className="event-image-wrapper">
             {renderMedia(event.img, event.title)}
           </div>
@@ -80,7 +83,7 @@ const EventId = () => {
         data={events}
         renderItem={(event) => (
           <div key={event.id}>
-            {event.img.includes('.mp4') ? (
+            {event.img.includes(".mp4") ? (
               <video loop muted autoPlay>
                 <source src={event.img} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -90,8 +93,8 @@ const EventId = () => {
                 <img src={event.img} alt={event.title} />
               </a>
             )}
-            <div className='lower-limit'>
-              <div className='event-details'>
+            <div className="lower-limit">
+              <div className="event-details">
                 <h3 className="similar-h3">{event.title}</h3>
                 <p>{event.date}</p>
               </div>
@@ -107,3 +110,4 @@ const EventId = () => {
 };
 
 export default EventId;
+

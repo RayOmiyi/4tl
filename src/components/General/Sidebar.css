@@ -1,22 +1,25 @@
+/* Sidebar Styling */
 .sidebar {
   position: fixed;
   top: 0;
   right: 0;
-  width: 500px;
+  width: 500px; /* Keep width as is for larger screens */
   height: 100vh;
   background-color: #F28C28;
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  transform: translateX(100%);
+  transform: translateX(100%); /* Initially hide offscreen */
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
+  overflow: hidden; /* Prevent scroll */
 }
 
 .sidebar.show {
-  transform: translateX(0);
+  transform: translateX(0); /* Show the sidebar */
 }
 
+/* Sidebar Header */
 .sidebar-header {
   display: flex;
   justify-content: space-between;
@@ -38,11 +41,12 @@
   padding: 0.5rem;
 }
 
+/* Navigation Links */
 .nav-links {
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-grow: 1;
+  width: 100%; /* Ensure full width */
 }
 
 .nav-links li {
@@ -70,12 +74,14 @@
   opacity: 0.8;
 }
 
+/* Social Links */
 .social-links {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
+  display: flex; /* Horizontal layout */
   gap: 2rem;
+  justify-content: center; /* Center the social icons */
 }
 
 .social-links a {
@@ -85,4 +91,44 @@
   text-decoration: none;
   font-size: 1rem;
   text-transform: uppercase;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Sidebar takes full width on mobile */
+    transform: translateX(100%); /* Hide the sidebar initially */
+  }
+
+  .sidebar.show {
+    transform: translateX(0); /* Show the sidebar when toggled */
+  }
+
+  .sidebar-header {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .logo {
+    width: 60px; /* Smaller logo on mobile */
+  }
+
+  .nav-links a {
+    font-size: 2rem; /* Adjust font size for mobile */
+  }
+
+  .social-links {
+    gap: 1rem; /* Adjust space between social icons on mobile */
+  }
+
+  .social-links a {
+    font-size: 1rem; 
+    color: white;
+    font-weight: 600;
+  }
+
+  .close-btn {
+    font-size: 28px; /* Increase close button size for better touch experience */
+  }
 }

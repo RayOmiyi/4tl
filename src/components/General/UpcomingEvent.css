@@ -209,9 +209,7 @@
 }
 
 @media (max-width: 768px) {
-  .Head {
-    font-size: 18px; /* Smaller text for header */
-  }
+
   .ViewAllButton {
     margin-bottom: 30px;
     font-size: 14px; /* Adjust button size */
@@ -249,7 +247,8 @@
   }
 
   .Head {
-    font-size: 18px;
+    font-size: 25px;
+    color: #EB8014;
   }
 
   .TicketButton {

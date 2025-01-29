@@ -209,6 +209,8 @@
 }
 
 @media (max-width: 768px) {
+
+
   .UpcomingContainer {
     padding: 0 10px;
     flex-direction: row;
@@ -241,7 +243,8 @@
   }
 
   .Head {
-    font-size: 18px;
+    font-size: 25px;
+    color: #EB8014;
   }
 
   .TicketButton {

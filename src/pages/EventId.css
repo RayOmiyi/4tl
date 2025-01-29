@@ -1,3 +1,5 @@
+
+/* General Events Section Styles */
 .events-section {
   background-color: #000;
   color: #fff;
@@ -6,7 +8,8 @@
   position: relative;
   overflow: hidden;
 }
-/* In Events.css */
+
+/* Event Image Wrapper */
 .event-image-wrapper img {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
@@ -16,20 +19,23 @@
   opacity: 1;
 }
 
+/* Events Header */
 .events-header {
   font-size: 1.5rem;
   margin-top: 20px;
   text-transform: uppercase;
 }
 
+/* Event Content Layout */
 .event-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
+  flex-wrap: nowrap; /* Prevent wrapping on large screens */
 }
 
+/* Event Details */
 .event-details {
   flex: 1;
   max-width: 50%;
@@ -83,9 +89,11 @@
 .event-description {
   font-size: 1rem;
   margin-bottom: 20px;
+  color: #ccc;
   text-transform: uppercase;
 }
 
+/* Event Button Styles */
 .event-button {
   font-family: 'ClashDisplay';
   height: 65px;
@@ -123,6 +131,7 @@
   z-index: -1;
 }
 
+/* Event Image Styles */
 .event-image-wrapper {
   flex: 1;
   position: relative;
@@ -136,6 +145,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+  order: 2;
   margin-top: 20px;
 }
 
@@ -150,7 +160,7 @@
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Animation for scrolling title */
+/* Scroll Animation for Title */
 @keyframes scrollTitle {
   0% {
     transform: translateX(0);
@@ -159,48 +169,57 @@
     transform: translateX(-100%);
   }
 }
-.event-image-wrapper img {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
 
-.event-image-wrapper img.loaded {
-  opacity: 1;
-}
-
-
-/* Mobile responsiveness */
+/* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
+  /* Adjust section padding for mobile */
+  .events-section {
+    padding-top: 100px; /* Add space at the top */
+  }
+
+  /* Adjust event content layout for mobile */
   .event-content {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 20px;
+    gap: 20px;
   }
 
   .event-details {
     max-width: 100%;
-    text-align: center;
+  align-items: center;    
+  text-align: center;
   }
 
   .event-title span {
     font-size: 3rem;
   }
 
+  /* Stack image above event info on mobile */
   .event-image-wrapper {
     max-width: 80%;
-    justify-content: center;
     margin-top: 20px;
+    order: 1;  /* Image comes first */
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center; /* Vertically center the image */
   }
-  .event-info-wrapper{
+
+  .event-info-wrapper {
+    order: 2;  /* Info comes second */
+    margin-top: 20px;
     align-items: center;
   }
 
   .event-image {
-    max-width: 100%;
-    height: auto;
+    max-width: 250px;
+    border-radius: 5px;
+    height: 300px;
     transform: rotate(0deg);
   }
 
+  /* Adjust button width on mobile */
   .event-button {
     width: 50%;
     margin-top: 15px;

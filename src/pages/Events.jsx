@@ -69,7 +69,7 @@ const Events = () => {
               </p>
               <button className="event-button">GET TICKETS</button>
             </div>
-          </div>
+            </div>
 
           <div className="event-image-wrapper">
             <img
@@ -78,7 +78,7 @@ const Events = () => {
               className={`event-image ${imageLoaded ? "loaded" : ""}`}
               loading="lazy" // This ensures lazy loading
               onLoad={() => setImageLoaded(true)}
-            />
+              />
           </div>
         </div>
       </div>
